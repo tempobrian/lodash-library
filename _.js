@@ -6,28 +6,19 @@ const _ = {
     },
     inRange(number, startVal, endVal) {
       if (endVal === undefined) {
-          endVal = startVal;
-          startVal = 0;
-        }
-        if (startVal > endVal) {
-          [startVal, endVal] = [endVal, startVal]
-        }
-      if (number < startVal) {
-        return false;
-        }
-      if (number >= endVal) {
-          return false;
-        }
-        if (number >= startVal && number <= endVal) {
-          return true;
-        } else {
-          return false;
-        }
-      },
-      words(string) {
-        const words = string.split(" ");
-        return words;
+        endVal = startVal;
+        startVal = 0;
       }
+      [startVal, endVal] = [
+        Math.min(startVal, endVal),
+        Math.max(startVal, endVal),
+      ];
+  
+      return number >= startVal && number < endVal;
+    },
+    words(string) {
+      return string.split(" ");
+    },
   };
 
 
