@@ -24,6 +24,10 @@ const _ = {
           return false;
         }
       },
+      words(string) {
+        const words = string.split(" ");
+        return words;
+      }
   };
 
 
