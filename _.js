@@ -27,6 +27,10 @@ const _ = {
       const endingPadding = length - string.length - startingPadding;
       const paddedString = ' '.repeat(startingPadding) + string + ' '.repeat(endingPadding);
       return paddedString;
+    },
+    has(object, key) {
+      const hasValue = object[key] !== undefined;
+      return hasValue;
     }
   };
 
